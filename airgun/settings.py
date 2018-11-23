@@ -45,6 +45,7 @@ class SeleniumSettings(object):
         self.saucelabs_user = None
         self.screenshots_path = None
         self.webdriver = None
+        self.command_executor = None
         self.webdriver_binary = None
 
 
@@ -60,6 +61,7 @@ class WebdriverCapabilitiesSettings(object):
         self.screenResolution = None
         self.tunnelIdentifier = None
         self.tags = None
+        self.browserName = None
 
 
 class Settings(object):
