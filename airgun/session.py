@@ -11,6 +11,7 @@ from fauxfactory import gen_string
 from airgun import settings
 from airgun.browser import AirgunBrowser, SeleniumBrowserFactory
 from airgun.entities.activationkey import ActivationKeyEntity
+from airgun.entities.audit import AuditEntity
 from airgun.entities.architecture import ArchitectureEntity
 from airgun.entities.bookmark import BookmarkEntity
 from airgun.entities.computeprofile import ComputeProfileEntity
@@ -236,6 +237,11 @@ class Session(object):
     def activationkey(self):
         """Instance of Activation Key entity."""
         return ActivationKeyEntity(self.browser)
+
+    @cached_property
+    def audit(self):
+        """Instance of Audit entity."""
+        return AuditEntity(self.browser)
 
     @cached_property
     def architecture(self):
